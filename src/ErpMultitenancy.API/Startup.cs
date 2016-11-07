@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using ErpMultitenancy.Tenancy.Domain.Tenant;
+using ErpMultitenancy.Tenancy.Repository;
 
 namespace ErpMultitenancy.API
 {
@@ -26,7 +28,10 @@ namespace ErpMultitenancy.API
 
         public void ConfigureServices(IServiceCollection services)
         {
+            string ravenUrl = "http://localhost:8080/";
+
             services.AddMvc();
+            services.AddSingleton<ITenancyRepository>(new TenancyRepository(ravenUrl));
         }
         
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)

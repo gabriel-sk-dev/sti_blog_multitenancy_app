@@ -3,32 +3,48 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+using ErpMultitenancy.Tenancy.Domain.Tenant;
 
 namespace ErpMultitenancy.API.Controllers.Tenancy
 {
     [Route("api/tenancy/[controller]")]
     public class TenantController : Controller
     {
+        private readonly ITenancyRepository _tenancyRepository;
+
+        public TenantController(ITenancyRepository tenancyRepository)
+        {
+            _tenancyRepository = tenancyRepository;
+        }
+
         // GET: api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Tenant> Get()
         {
-            return new string[] { "value1", "value2" };
+            throw new NotImplementedException();
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public object Get(string tenant)
+        public IActionResult Get(string id)
         {
-            return new { Name="Cliente Teste", TenantAlias = "teste" };
+            var tenant = _tenancyRepository.Load(id);
+            if (tenant == null)
+                return new NotFoundResult();
+            return new OkObjectResult(tenant);
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]TenantInputModel input)
         {
+            var existTenant = _tenancyRepository.Load(input.Prefix);
+            if (existTenant != null)
+                throw new InvalidOperationException("Tenant prefix is invalid");
+
+            var tenant = new Tenant(Guid.NewGuid(), input.Prefix, input.Name);
+            _tenancyRepository.Add(tenant);
+            
         }
 
         // PUT api/values/5
@@ -41,6 +57,12 @@ namespace ErpMultitenancy.API.Controllers.Tenancy
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-        }
+        }        
+    }
+
+    public class TenantInputModel
+    {
+        public string Prefix { get; set; }
+        public string  Name { get; set; }
     }
 }
