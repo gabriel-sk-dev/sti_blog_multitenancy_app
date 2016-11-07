@@ -8,7 +8,7 @@
     function loadErpModule($stateProvider) {
         var clientNotFoundState = {
             name: 'tenantnotfound',
-            url: '/newclient',
+            url: '',
             templateUrl: 'app/authentication/tenant-not-found/tenant-not-found.html',
             controller: 'tenantNotFoundController',
             controllerAs: 'vm'
@@ -17,9 +17,10 @@
 
         var clientLogin = {
             name: 'tenantlogin',
-            url: '/login',
+            url: '',
+            params: {tenant: null},
             templateUrl: 'app/authentication/tenant-login/tenant-login.html',
-            controller: '',
+            controller: 'tenantLoginController',
             controllerAs: 'vm'
         };
         $stateProvider.state(clientLogin.name, clientLogin);

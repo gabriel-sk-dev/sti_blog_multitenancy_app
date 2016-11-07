@@ -6,18 +6,20 @@
 
     runErpModule.$inject = ['tenancyUrl', 'tenancyData', '$state'];
     function runErpModule(tenancyUrl, tenancyData, $state) {
-        //todo: block ui
-
+        
         var tenantPrefix = tenancyUrl.extractTenant();
-        var tenant = tenancyData.get(tenantPrefix);
-
-        //todo: unblock ui
-
-        if (tenant === undefined) {
+        if (tenantPrefix === "")
             return $state.go('tenantnotfound');
-        }
-            
-        $state.go('tenantlogin');
-    }
 
+        var tenantPromisse = tenancyData.get(tenantPrefix);
+        tenantPromisse.then(
+            function (sucessData) {
+                console.log(sucessData);
+                return $state.go('tenantlogin', {tenant : sucessData.data});
+            },
+            function (errorData) {
+                console.log(errorData);
+                return $state.go('tenantnotfound');
+        });           
+    }
 })();
