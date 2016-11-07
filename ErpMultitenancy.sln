@@ -22,7 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - API", "01 - API", "{73
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Domain", "02 - Domain", "{D56EED10-01D5-4869-9A04-2A5176E094FB}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ErpMultitenancy.Tenancy.Repository", "ErpMultitenancy.Tenancy.Repository\ErpMultitenancy.Tenancy.Repository.xproj", "{D1F3F481-0799-4DC8-A77B-259B09C63899}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ErpMultitenancy.Tenancy.Repository", "src\ErpMultitenancy.Tenancy.Repository\ErpMultitenancy.Tenancy.Repository.xproj", "{D1F3F481-0799-4DC8-A77B-259B09C63899}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
