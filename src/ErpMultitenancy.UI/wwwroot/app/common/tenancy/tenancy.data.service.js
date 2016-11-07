@@ -10,11 +10,20 @@
             get: getFunction
         };
 
-        function getFunction() {
-            var url = "";
+        function getFunction(tenant) {
+            var url = "http://localhost:60000/api/tenancy/tenant/"+tenant;
+            var promise = $http.get(url), deferObject = deferObject || $q.defer();
 
-            var promise = $http.get(url),
-                            deferObject = deferObject || $q.defer();
+            promise
+                .then(
+                    function (answer) {
+                        deferObject.resolve(answer);
+                    },
+                    function (reason) {
+                        deferObject.reject(reason);
+                    });
+
+            return deferObject.promise;
         }
 
     }

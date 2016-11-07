@@ -1,6 +1,8 @@
 ﻿(function () {
     'use strict';
     angular.module('erpmultitenancy', [
-        'ui.router', 'common.tenancy'
+        'ui.router',
+        'common.tenancy',
+        'erpmultitenancy.authentication'
     ]);
 })();

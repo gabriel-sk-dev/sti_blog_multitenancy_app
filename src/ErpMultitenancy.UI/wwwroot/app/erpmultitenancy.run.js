@@ -4,21 +4,20 @@
         .module('erpmultitenancy')
         .run(runErpModule);
 
-    runErpModule.$inject = ['$tenancyUrlService', '$tenancyDataService', '$state'];
-    function runErpModule($tenancyUrlService, $tenancyDataService, $state) {
+    runErpModule.$inject = ['tenancyUrl', 'tenancyData', '$state'];
+    function runErpModule(tenancyUrl, tenancyData, $state) {
         //todo: block ui
 
-        var tenantPrefix = $tenancyUrlService.extractTenant();
-        var tenant = $tenancyDataService.Get(tenantPrefix);
+        var tenantPrefix = tenancyUrl.extractTenant();
+        var tenant = tenancyData.get(tenantPrefix);
 
         //todo: unblock ui
 
         if (tenant === undefined) {
-            $state.go('tenantnotfound');
+            return $state.go('tenantnotfound');
         }
             
-        $state.go('login');
-
+        $state.go('tenantlogin');
     }
 
 })();

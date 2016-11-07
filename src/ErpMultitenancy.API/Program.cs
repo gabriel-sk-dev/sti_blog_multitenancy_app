@@ -4,8 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Builder;
 
-namespace ErpMultitenancy.UI
+namespace ErpMultitenancy.API
 {
     public class Program
     {
@@ -15,6 +16,7 @@ namespace ErpMultitenancy.UI
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
+                .UseUrls("http://localhost:60000")
                 .UseStartup<Startup>()
                 .Build();
 

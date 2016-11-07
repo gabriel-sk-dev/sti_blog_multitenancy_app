@@ -2,7 +2,7 @@
     'use strict';
     angular
         .module('common.tenancy')
-        .factory * ('tenancyUrl', tenancyUrlService);
+        .factory('tenancyUrl', tenancyUrlService);
 
     tenancyUrlService.$inject = ['$location'];
     function tenancyUrlService($location) {
@@ -10,7 +10,7 @@
             extractTenant: extractTenantFunction
         };
 
-        function extractTenantFuncion() {
+        function extractTenantFunction() {
             var tenantPrefix = $location.host().split('.')[0];
 
             //todo: check hostname

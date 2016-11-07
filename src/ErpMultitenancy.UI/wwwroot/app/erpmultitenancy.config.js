@@ -10,7 +10,7 @@
             name: 'tenantnotfound',
             url: '/newclient',
             templateUrl: 'app/authentication/tenant-not-found/tenant-not-found.html',
-            controller: '',
+            controller: 'tenantNotFoundController',
             controllerAs: 'vm'
         };
         $stateProvider.state(clientNotFoundState.name, clientNotFoundState);

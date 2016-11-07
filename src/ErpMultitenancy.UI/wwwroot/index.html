@@ -5,7 +5,8 @@
     <title>Exemplo Sistema Multitenancy</title>
 </head>
 <body>
-
+    <h1>ERP - MULTITENANCY - EXEMPLO</h1>
+    <hr />
     <div ui-view></div>
 
     <!-- lib javascripts -->
@@ -21,8 +22,10 @@
     <!-- common libs javascripts -->
     <script src="app/common/tenancy/tenancy.module.js"></script>
     <script src="app/common/tenancy/tenancy.url.service.js"></script>
+    <script src="app/common/tenancy/tenancy.data.service.js"></script>
 
     <!-- authentication javascripts -->
-
+    <script src="app/authentication/authentication.module.js"></script>
+    <script src="app/authentication/tenant-not-found/tenant-not-found.Controller.js"></script>
 </body>
 </html>
