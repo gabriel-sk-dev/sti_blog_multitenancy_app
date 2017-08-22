@@ -1,0 +1,46 @@
+﻿<div id="currentDialog">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2 style="color:white;">Saiba mais sobre o contrato {{vm.dados.titulo}}</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="vm.fechar()">
+                <md-icon>close</md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <div class="md-dialog-content">
+            <h2>{{vm.dados.titulo}}</h2>
+            <p>{{vm.dados.descricao}}</p>            
+            <p>A partir de &ensp;<strong>{{vm.dados.valor | real}}</strong> <br><i style="font-size: 11px;">{{vm.dados.observacao}}</i></p>
+            
+            <p>Contrato de &ensp;<strong>{{vm.dados.tempoContrato}}</strong></p>
+
+            <h4>Benefícios</h4>
+            <ul>
+                <li ng-repeat="itemBeneficios in vm.dados.beneficios">{{itemBeneficios}}</li>
+            </ul>
+
+            <h4>Pré-requisitos para contratação</h4>
+            <ul>
+                <li ng-repeat="itemPrerequisitosParaContratacao in vm.dados.prerequisitosParaContratacao">{{itemPrerequisitosParaContratacao}}</li>
+            </ul>
+
+            <h4>Restrições</h4>
+            <ul>
+                <li ng-repeat="itemRestricoes in vm.dados.restricoes">{{itemRestricoes}}</li>
+            </ul>
+
+            <h4>Obrigações</h4>
+            <ul>
+                <li ng-repeat="itemObrigacoes in vm.dados.obrigacoes">{{itemObrigacoes}}</li>
+            </ul>
+        </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row" class="layout-row">
+        <button class="md-primary md-raised md-button md-blue-theme md-ink-ripple" ng-click="vm.fechar()">
+            <span class="ng-scope">Fechar</span>
+        </button>
+    </md-dialog-actions>
+
+</div>

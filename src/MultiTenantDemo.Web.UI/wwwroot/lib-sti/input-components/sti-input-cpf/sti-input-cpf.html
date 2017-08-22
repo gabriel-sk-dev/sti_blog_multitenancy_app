@@ -1,0 +1,21 @@
+﻿<md-input-container class="md-icon-float md-block" style="text-align: left">
+
+    <label>{{vm.label}}</label>
+
+    <input type="text"
+           class="form-control"
+           name="{{vm.name}}"
+           ng-model="vm.model"
+           ng-required="{{vm.required}}"
+           ng-disabled="vm.readOnly"
+           maxlength="14"
+           mask="999.999.999-99"
+           valid-cpf />
+
+    <div ng-messages="vm.form[vm.name].$error" role="alert">
+        <div ng-show="vm.form[vm.name].$error.required" ng-message="required">Campo obrigatório.</div>
+        <div ng-show="vm.form[vm.name].$error.validateCpf" ng-message="validateCpf">CPF inválido.</div>
+        <div class="field-error" style="display: none;"></div>
+    </div>
+
+</md-input-container>

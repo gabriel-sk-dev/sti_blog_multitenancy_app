@@ -1,0 +1,22 @@
+﻿<div style="width: 90%; margin: auto;">
+    <slick class="slider one-time"
+           dots="true"
+           arrows="true"
+           infinite="true"
+           speed="300"
+           slides-to-show="3"
+           touch-move="false"
+           slides-to-scroll="3">
+
+        <div class="Carrossel-card"
+             ng-class="{'selecionado': item.id == vm.itemSelected.id}"
+             ng-repeat="item in vm.itens" ng-click="vm.Select(item)">
+
+            <h3>{{item.titulo}}</h3>
+            <div style="min-height: 100px; padding-right: 10px;">{{item.descricao}}</div>
+            <strong class="pull-right f-bold">{{item.valorMensal | real}}</strong>
+
+        </div>
+
+    </slick>
+</div>

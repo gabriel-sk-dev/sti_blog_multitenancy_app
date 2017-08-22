@@ -1,0 +1,37 @@
+﻿
+<md-autocomplete id="AutoCompleteInput"
+                 class="m-t-20 m-auto w-80"
+                 md-delay="1000"
+                 md-min-length="3"
+                 md-input-name="autocompleteField"
+                 md-selected-item="vm.InSelectedItem"
+                 md-selected-item-change="vm.InSelectedItemChange()"
+                 md-search-text="vm.searchValue"
+                 md-items="item in vm.query(vm.searchValue)"
+                 md-item-text="item.fullName"
+                 md-floating-label="{{vm.floatingLabel}}">
+    <md-item-template class="cursor-pointer">
+        <!--<div class="item-title f-14" style="line-height: 34px;">
+            <md-icon class="material-icons m-r-20 c-black">account_box</md-icon>
+            {{item.fullName}}
+            <md-button class="md-primary md-raised btn-select-item-autocomplete">Iniciar Atendimento</md-button>
+        </div>-->
+        <div class="item-title f-14" style="line-height: 34px;">
+            <div layout="row" class="table-header">
+                <div flex="5">
+                    <md-icon class="material-icons m-r-20 c-black">account_box</md-icon>
+                </div>
+                <div flex="65" class="autocomplete-content-ellipsis m-l-10">
+                    {{item.fullName}}
+                </div>
+                <div flex="30">
+                    <md-button class="md-primary md-raised btn-select-item-autocomplete">Iniciar Atendimento</md-button>
+                </div>
+            </div>
+        </div>
+
+    </md-item-template>
+    <md-not-found>
+        Nenhum resultado encontrado.
+    </md-not-found>
+</md-autocomplete>

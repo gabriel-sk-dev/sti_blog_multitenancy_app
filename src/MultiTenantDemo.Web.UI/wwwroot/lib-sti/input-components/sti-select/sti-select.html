@@ -1,0 +1,18 @@
+﻿<md-input-container class="md-icon-float md-block t-left">
+    <label style="font-weight: inherit;">{{vm.label}}</label>
+    <md-select placeholder="{{vm.placeholder}}"
+               class="m-0"
+               name="{{vm.name}}"
+               aria-label="{{vm.label}}"
+               ng-model="vm.model"
+               ng-required="{{vm.required}}"
+               ng-change="vm.fnChange(vm.model)"
+               ng-disabled="vm.readOnly">
+        <md-option ng-value="item.key" ng-repeat="item in vm.listaSelect">
+            {{item.value}}
+        </md-option>
+    </md-select>
+    <div ng-messages="vm.form[vm.name].$error" role="alert">
+        <div ng-show="vm.form[vm.name].$error.required" ng-message="required">Campo obrigatório.</div>
+    </div>
+</md-input-container>

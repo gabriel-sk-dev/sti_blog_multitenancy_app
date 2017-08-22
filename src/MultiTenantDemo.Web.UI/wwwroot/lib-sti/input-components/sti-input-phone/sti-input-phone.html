@@ -1,0 +1,22 @@
+﻿<md-input-container class="md-icon-float md-block" style="text-align: left">
+
+    <label>{{vm.label}}</label>
+
+    <input type="text"
+           class="form-control"
+           name="{{vm.name}}"
+           ng-model="vm.model"
+           ng-maxlength="{{vm.maxlength}}"
+           maxlength="{{vm.maxlength}}"
+           ng-minlength="{{vm.minlength}}"
+           ng-required="{{vm.required}}"
+           ng-disabled="vm.readOnly"
+           regex-val
+           rule="[a-zA-Z]" />
+    <div ng-messages="vm.form[vm.name].$error" ng-show="vm.form[vm.name].$touched" role="alert">
+        <div ng-show="vm.form[vm.name].$error.required" ng-message="required">Campo obrigatório.</div>
+        <div ng-show="vm.form[vm.name].$error.validatePhone" ng-message="validatePhone">Telefone inválido.</div>
+        <div ng-show="vm.form[vm.name].$error.minlength" ng-message="minlength">Digite ao menos {{vm.minlength}} caracteres.</div>
+    </div>    
+
+</md-input-container>

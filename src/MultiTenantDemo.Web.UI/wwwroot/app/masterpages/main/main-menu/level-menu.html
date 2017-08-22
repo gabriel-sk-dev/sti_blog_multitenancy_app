@@ -1,0 +1,30 @@
+﻿<div ng-show="vm.menu.expand"
+     class="sti-menu-level"
+     ng-class="{'menu-border-left': vm.nivel > 1}">
+
+    <!--Item com Sub-itens-->
+    <md-list-item ng-show="vm.shouldShowItemWithSubItem(vm.menu)"
+                  ng-click="::vm.expandSubItems(vm.menu); isClicked = !isClicked;"
+                  class="bgm-light-gray">
+        <md-icon class="f-20">{{vm.menu.icon}}</md-icon>
+        <p class="md-body-2">{{vm.menu.label}}</p>
+        <span flex></span>
+        <md-icon>{{isClicked ? 'expand_less' : 'expand_more'}}</md-icon>
+    </md-list-item>
+
+    <!--Item sem Sub-itens-->
+    <md-list-item ng-show="vm.shouldShowItemWithoutSubItem(vm.menu)"
+                  ng-click="vm.goTo(vm.menu);"
+                  ng-class="{'bgm-light-gray': vm.nivel > 1}"
+                  ng-style="{'border-bottom': vm.nivel > 1 && '1px solid rgb(239, 239, 239)'}">
+        <md-icon class="f-20">{{vm.menu.icon}}</md-icon>
+        <p class="md-body-2">{{vm.menu.label}}</p>
+        <span flex></span>
+        <md-icon>chevron_right</md-icon>
+    </md-list-item>
+
+    <!-- Lista de sub-itens, recursivo -->
+    <div ng-repeat="item_submenu in vm.menu.subItems">
+        <level-menu menu="item_submenu" nivel="{{::(+vm.nivel + 1)}}" />
+    </div>
+</div>

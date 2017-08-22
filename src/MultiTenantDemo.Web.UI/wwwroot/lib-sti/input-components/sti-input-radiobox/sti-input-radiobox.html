@@ -1,0 +1,24 @@
+﻿<md-input-container class="md-icon-float md-block multitenantdemo-input-radiobox" style="text-align: left">
+
+    <p style="color: rgba(0,0,0,0.5); margin-bottom: 10px;" ng-if="!!vm.label">
+        {{vm.label}}
+    </p>
+
+    <md-radio-group name="{{vm.name}}"
+                    ng-model="vm.model"
+                    ng-required="{{vm.required}}"
+                    ng-repeat="option in vm.options[0]"                    
+                    ng-change="vm.options[1].fnAcao(vm.model)"
+                    ng-disabled="vm.readOnly">
+        <md-radio-button class="md-primary" value="{{option.value}}">
+            {{option.label}}
+        </md-radio-button>
+        <span class="md-radio-disabled"></span>
+    </md-radio-group>
+
+    <div ng-messages="vm.form[vm.name].$error"
+         ng-show="vm.form[vm.name].$touched"
+         role="alert">
+        <div ng-message="required">Escolha uma opção</div>
+    </div>
+</md-input-container>

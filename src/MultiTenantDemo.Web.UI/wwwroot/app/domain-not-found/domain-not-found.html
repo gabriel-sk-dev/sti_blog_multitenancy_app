@@ -1,0 +1,52 @@
+﻿<header style="box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3); position: absolute; width: 100%;"
+        layout="column"
+        role="main"
+        flex>
+    <md-toolbar role="toolbar">
+        <div class="md-toolbar-tools">
+            <a href="#">
+                Multi Tenant Demo
+            </a>
+        </div>
+    </md-toolbar>
+</header>
+
+<div class="login-container">
+    <div class="login-page">
+        <div layout="row">
+            <h2 flex="100">Você é nosso cliente?</h2>
+        </div>
+        <div layout="row" class="m-t-30 m-b-30">
+            <div flex="100" class="t-center f-20">O domínio <span style="background-color: #fff; border: 1px solid #ddd; padding: 2px 4px; ">{{::vm.subDomain}}</span> não consta em nossa base de clientes.</div>
+        </div>
+        <div layout="row" class="m-t-30 m-b-30">
+            <div flex="100" style="text-align: center">
+                <md-button type="button" class="md-raised md-primary" ng-click="vm.showForm = !vm.showForm">
+                    Sou cliente e quero acessar
+                </md-button>
+                <md-button type="button" class="md-raised md-primary" ng-click="vm.goToRegister()">
+                    Ainda não sou cliente
+                </md-button>
+            </div>
+        </div>
+        <form name="BasicEditForm" ng-submit="vm.consult()" ng-if="vm.showForm">
+            <div layout="row">
+                <div flex="30" flex-offset="20">
+                    <sti-input-text form="BasicEditForm"
+                                    name="domain"
+                                    label="Informe seu domínio"
+                                    model="vm.domain"
+                                    required="true"
+                                    maxlength="100"
+                                    minlength="3" />
+                </div>
+                <div flex="30">
+                    <md-button type="submit" class="md-raised md-primary" ng-disabled="BasicEditForm.$invalid">
+                        Consultar
+                    </md-button>
+                </div>
+                <div flex="15" flex-offset="5"></div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,113 @@
+{
+  "version": 2,
+  "exports": {
+    "MultiTenantDemo.Billing.Domain/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.1",
+      "compile": {
+        "bin/Debug/MultiTenantDemo.Billing.Domain.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/MultiTenantDemo.Billing.Domain.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/MultiTenantDemo.Billing.Domain.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "MultiTenantDemo.Billing.Infra/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.1",
+      "compile": {
+        "bin/Debug/MultiTenantDemo.Billing.Infra.dll": {}
+      },
+      "runtime": {
+        "../packages/RavenDB.Client.3.5.4/lib/net45/Raven.Abstractions.dll": {},
+        "../packages/RavenDB.Client.3.5.4/lib/net45/Raven.Client.Lightweight.dll": {},
+        "bin/Debug/MultiTenantDemo.Billing.Infra.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/MultiTenantDemo.Billing.Infra.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "MultiTenantDemo.Infra/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.1",
+      "compile": {
+        "bin/Debug/MultiTenantDemo.Infra.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/MultiTenantDemo.Infra.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/MultiTenantDemo.Infra.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "MultiTenantDemo.Tenancy.Domain/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.1",
+      "compile": {
+        "bin/Debug/MultiTenantDemo.Tenancy.Domain.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/MultiTenantDemo.Tenancy.Domain.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/MultiTenantDemo.Tenancy.Domain.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "MultiTenantDemo.Tenancy.Infra/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.1",
+      "compile": {
+        "bin/Debug/MultiTenantDemo.Tenancy.Infra.dll": {}
+      },
+      "runtime": {
+        "../packages/RavenDB.Client.3.5.4/lib/net45/Raven.Abstractions.dll": {},
+        "../packages/RavenDB.Client.3.5.4/lib/net45/Raven.Client.Lightweight.dll": {},
+        "bin/Debug/MultiTenantDemo.Tenancy.Infra.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/MultiTenantDemo.Tenancy.Infra.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "MultiTenantDemo.Infra.Raven/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.1",
+      "compile": {
+        "bin/Debug/MultiTenantDemo.Infra.Raven.dll": {}
+      },
+      "runtime": {
+        "../packages/RavenDB.Client.3.5.4/lib/net45/Raven.Abstractions.dll": {},
+        "../packages/RavenDB.Client.3.5.4/lib/net45/Raven.Client.Lightweight.dll": {},
+        "bin/Debug/MultiTenantDemo.Infra.Raven.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/MultiTenantDemo.Infra.Raven.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    }
+  }
+}

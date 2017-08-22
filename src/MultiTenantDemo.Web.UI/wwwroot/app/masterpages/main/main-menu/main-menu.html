@@ -1,0 +1,16 @@
+﻿<md-sidenav class="md-sidenav-left md-whiteframe-z2" role="sidenav" md-component-id="left" md-is-open="false">
+    <md-toolbar class="md-medium-tall md-hue-2" layout-align="end end">
+        <div class="md-toolbar-tools" layout layout-padding>
+            <div layout="column" layout-padding>
+                <span class="md-body-2">{{vm.tenant}}</span>
+                <span flex></span>
+            </div>
+            <span flex></span>
+        </div>
+    </md-toolbar>
+    <md-content role="navigation">
+        <md-list ng-repeat="item in vm.Menu">
+            <level-menu menu="item" nivel="1" />
+        </md-list>        
+    </md-content>
+</md-sidenav>

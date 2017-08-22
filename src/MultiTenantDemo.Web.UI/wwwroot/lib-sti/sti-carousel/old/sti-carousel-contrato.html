@@ -1,0 +1,41 @@
+﻿<div style="width: 90%; margin: auto;">
+    <slick class="slider one-time"
+           dots="true"
+           arrows="true"
+           infinite="true"
+           speed="300"
+           slides-to-show="3"
+           touch-move="false"
+           slides-to-scroll="3">
+
+        <div class="Carrossel-card Carrossel-contrato"
+             ng-class="{'selecionado': item.id == vm.itemSelected.id}"
+             ng-repeat="item in vm.itens" ng-click="vm.Select(item)">
+
+            <h3 style="color: gray;">{{item.titulo | limitTo : 40}}</h3>
+            <p>{{item.descricao | limitTo : 200}}</p>
+            <ul style="min-height: 80px;">
+                <li ng-repeat="itemBeneficios in item.beneficios | limitTo: 3">{{itemBeneficios}}</li>
+            </ul>
+            <div style="min-height: 50px;">
+                <div layout="row" layout-align="center center">
+                    A partir de &ensp;<strong>{{item.valor | real}} *</strong>
+                </div>
+                <div layout="row" layout-align="center center">
+                    Contrato de &ensp;<strong>{{item.tempoContrato}}</strong>
+                </div>
+            </div>
+            <div layout="row" layout-align="center center">
+                <input type="button"
+                       value="Saiba mais"
+                       style="text-align:center;"
+                       class="md-button md-raised md-primary"
+                       ng-click="vm.detalhes(item);" />
+            </div>
+        </div>
+
+    </slick>
+    <div layout="row">
+        <p style="font-size: 10px;">{{vm.itens[0].observacao}}</p>
+    </div>
+</div>

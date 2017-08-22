@@ -1,0 +1,20 @@
+﻿<md-toolbar role="toolbar" style="box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3); width: 100%;">
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" ng-click="vm.openMenu()" aria-label="Menu">
+            <md-icon>menu</md-icon>
+        </md-button>
+
+        <a href ng-click="vm.goToHome()" class="topo-imagem m-l-15">
+            {{vm.tenant}}
+        </a>
+
+        <span flex></span>
+
+        <div style="margin-right: 5px;">
+            <md-button class="md-icon-button" aria-label="Visão geral (Página incial)" ng-click="vm.goToHome()">
+                <md-tooltip md-direction="top">Visão geral</md-tooltip>
+                <i class="material-icons">home</i>
+            </md-button>
+        </div>
+    </div>
+</md-toolbar>

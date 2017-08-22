@@ -1,0 +1,20 @@
+﻿<label style="color: rgba(0,0,0,0.5); font-weight: inherit; padding-left: 15px">
+    {{vm.label}}
+    <span ng-show="{{vm.required}}"> *</span>
+</label>
+
+<md-datepicker-custom name="{{vm.name}}"
+                      ng-model="vm.modelDate"
+                      md-custom-required="{{vm.required}}"
+                      required="{{vm.required}}"
+                      ng-disabled="vm.readOnly"
+                      md-placeholder="Selecione data"
+                      md-custom-mask="39/19/9999"
+                      md-custom-restrict="reject"
+                      md-current-view="year"
+                      style="display: block; margin: 0px;">
+</md-datepicker-custom>
+<div ng-messages="vm.form[vm.name].$error" ng-show="vm.form[vm.name].$touched" role="alert" style="margin-left: 64px; color:red; font-size: 12px;">
+    <div ng-show="vm.form[vm.name].$error.valid" ng-message="valid">Data inválida</div>
+    <div ng-show="vm.form[vm.name].$error.required" ng-message="required">Data obrigatória</div>
+</div>

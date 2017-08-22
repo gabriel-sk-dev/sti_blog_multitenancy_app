@@ -1,0 +1,19 @@
+﻿<md-input-container class="md-icon-float md-block" style="text-align: left">
+
+    <label>{{vm.label}}</label>
+
+    <input type="text"
+           class="form-control"
+           name="{{vm.name}}"
+           ng-model="vm.model"
+           ng-required="{{vm.required}}"
+           ng-disabled="vm.readOnly"
+           maxlength="200"
+           valid-full-name />
+
+    <div ng-messages="vm.form[vm.name].$error" ng-show="vm.form[vm.name].$touched" role="alert">
+        <div ng-show="vm.form[vm.name].$error.required" ng-message="required">Campo obrigatório.</div>
+        <div ng-show="vm.form[vm.name].$error.validateFullName" ng-message="validateFullName">Nome inválido.</div>
+    </div>
+
+</md-input-container>

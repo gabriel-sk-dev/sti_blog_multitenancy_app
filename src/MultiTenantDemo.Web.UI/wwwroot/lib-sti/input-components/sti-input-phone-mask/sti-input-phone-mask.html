@@ -1,0 +1,21 @@
+﻿<md-input-container class="md-icon-float md-block" style="text-align: left">
+
+    <label>{{vm.label}}</label>
+
+    <input type="text"
+           class="form-control"
+           name="{{vm.name}}"
+           ng-model="vm.model"
+           ng-required="{{vm.required}}"
+           maxlength="16"
+           mask="(99) 9999-99999?"
+           ng-disabled="vm.readOnly"
+           />
+
+    <div ng-messages="vm.form[vm.name].$error" ng-show="vm.form[vm.nome].$touched" role="alert">
+        <div ng-message="required">Campo obrigatório.</div>
+        <div ng-message="validatePhone">Telefone inválido.</div>
+        <!--<div class="field-error" style="display: none;"></div>-->
+    </div>
+
+</md-input-container>

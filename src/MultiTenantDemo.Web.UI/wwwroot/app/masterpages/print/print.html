@@ -1,0 +1,10 @@
+﻿<style type="text/css"> body { background-color: white !important; } </style>
+<div id="print-page" print-section>
+    <md-button class="md-fab md-primary pull-right btn-add-tabs" aria-label="Imprimir" print-btn print-hide>
+        <md-icon md-svg-src="../../../../../lib/material-design-iconic-font/svg/2.2/01 - web application/print.svg"></md-icon>
+    </md-button>
+    <div class="content-print" ui-view>
+
+    </div>
+</div>
+<div id="print-rodape" print-section>{{vm.clube.companyName}} - {{vm.data | date:'dd/MM/yyyy HH:mm:ss'}}</div>

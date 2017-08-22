@@ -1,0 +1,12 @@
+﻿<div layout="row" flex class="layout-row flex breadcrumbs ">
+    <span ng-repeat="item in vm.itens">
+        <span ng-if="$first"
+              class="material-icons f-16 d-block pull-left m-r-10 cursor-pointer"
+              ng-click="vm.goHome()">home</span>
+        <span ng-if="!$first">&ensp; » &ensp;</span>
+        <span ng-if="!item.route || $last">{{item.title}}</span>
+        <span ng-if="item.route && !$last" 
+              class="f-underline multitenantdemo-primary-color cursor-pointer" 
+              ng-click="vm.goToRouter(item);">{{item.title}}</span>
+    </span>
+</div>

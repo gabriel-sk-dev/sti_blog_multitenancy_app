@@ -1,0 +1,28 @@
+﻿<md-input-container class="md-icon-float md-block" style="text-align: left">
+
+    <md-tooltip ng-if="!vm.readOnly && vm.tooltip"
+                md-direction="{{vm.tooltipDirection}}"
+                md-delay="vm.tooltipDelay">
+        {{vm.tooltip}}
+    </md-tooltip>
+
+    <label>{{vm.label}}</label>
+
+    <!--step="0.00"-->
+    <input type="number"
+           class="form-control"
+           min="{{vm.min}}" 
+           max="{{vm.max}}"
+           name="{{vm.name}}"
+           limit-to="{{vm.maxlength}}"
+           ng-model="vm.model"
+           ng-required="{{vm.required}}"
+           ng-disabled="vm.readOnly" />
+
+    <div ng-messages="vm.form[vm.name].$error" ng-show="vm.form[vm.nome].$touched" role="alert">
+        <div ng-show="vm.form[vm.name].$error.required" ng-message="required">Campo obrigatório.</div>
+        <div ng-show="vm.form[vm.name].$error.min" ng-message="min">O valor máximo é {{vm.min}}.</div>
+        <div ng-show="vm.form[vm.name].$error.max" ng-message="max">O valor máximo é {{vm.max}}.</div>
+    </div>
+
+</md-input-container>

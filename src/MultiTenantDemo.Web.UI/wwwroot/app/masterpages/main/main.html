@@ -1,0 +1,20 @@
+﻿<main-menu user="vm.user"></main-menu>
+<section layout="column" role="main" class="m-b-25" flex>
+    <main-header user="vm.user"></main-header>
+    <md-content class="main">
+
+        <div ui-view></div>
+
+    </md-content>
+</section>
+
+<div class="btn-fixed" ng-show="vm.buttonChevronDown">
+    <button class="md-fab docs-scroll-fab md-button md-primary" type="button" ng-click="vm.scrollBottom()" aria-label="">
+        <md-icon md-svg-src="../../../../../lib/material-design-iconic-font/svg/2.2/09 - directional/chevron-down.svg"></md-icon>
+    </button>
+</div>
+<div class="btn-fixed" ng-show="vm.buttonChevronUp">
+    <button class="md-fab docs-scroll-fab md-button md-primary" type="button" ng-click="vm.scrollTop()" aria-label="">
+        <md-icon md-svg-src="../../../../../lib/material-design-iconic-font/svg/2.2/09 - directional/chevron-up.svg"></md-icon>
+    </button>
+</div>

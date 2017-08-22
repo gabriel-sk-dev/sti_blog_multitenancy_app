@@ -1,0 +1,54 @@
+﻿<!doctype html>
+<html ng-app="multitenantdemo">
+<head>
+    <meta charset="utf-8" />
+    <title>Multi Tenant Demo</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />    
+    <link media="print" rel="stylesheet" href="lib/angular-print/angularprint.css">
+    <link href="assets/css/libs.css" rel="stylesheet" />
+    <link href="assets/css/smart.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div ui-view></div>
+
+    <script src="assets/js/libs.js"></script>
+    
+
+    <!--multitenantdemo-->
+    <script src="multitenantdemo.global.js"></script>
+    <script src="multitenantdemo.module.js"></script>
+    <script src="multitenantdemo.filters.js"></script>
+    <script src="multitenantdemo.constants.js"></script>
+    <script src="multitenantdemo.interceptors.js"></script>
+    <!--common-->
+    <script src="app/common/common.module.js"></script>
+    <script src="app/common/request/request.module.js"></script>
+    <script src="app/common/request/request.provider.js"></script>    
+    <script src="app/common/tenant/tenant.module.js"></script>
+    <script src="app/common/tenant/tenantUrl.service.js"></script>
+    <script src="app/common/tenant/tenant.dataservice.js"></script>
+    <!--masterpages-->
+    <script src="app/masterpages/masterpages.module.js"></script>
+    <script src="app/masterpages/main/main.controller.js"></script>
+    <script src="app/masterpages/main/main-header/main-header.component.js"></script>
+        <script src="app/masterpages/main/main-menu/main-menu.component.js"></script>
+    <script src="app/masterpages/main/main-menu/level-menu.component.js"></script>
+    <script src="app/masterpages/print.module.js"></script>
+    <script src="app/masterpages/print/print.controller.js"></script>
+    <script src="app/masterpages/main/main.dataservice.js"></script>
+    <!--domain-not-found-->
+    <script src="app/domain-not-found/domain-not-found.module.js"></script>
+    <script src="app/domain-not-found/domain-not-found.route.js"></script>
+    <script src="app/domain-not-found/domain-not-found.controller.js"></script>
+    <!--not allowed-->
+    <script src="app/not-allowed/not-allowed.module.js"></script>
+    <script src="app/not-allowed/not-allowed.controller.js"></script>
+    <script src="app/not-allowed/not-allowed.route.js"></script>
+
+    <script src="app/financial/invoices/invoices.module.js"></script>
+    <script src="app/financial/invoices/invoices.controller.js"></script>
+    <script src="app/financial/invoices/invoices.dataservice.js"></script>
+    <script src="app/financial/invoices/invoices.route.js"></script>
+</body>
+</html>

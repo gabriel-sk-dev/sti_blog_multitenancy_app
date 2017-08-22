@@ -1,0 +1,22 @@
+﻿<md-card>   
+    <md-card-header>
+        <md-toolbar>
+            <md-icon class="material-icons">subtitles</md-icon>
+            <span class="md-title">Invoices</span>
+        </md-toolbar>
+    </md-card-header>
+    <md-card-content>
+        <table>
+            <tr>
+                <td><b>Cliente</b></td>
+                <td><b>Valor</b></td>
+            </tr>
+            <tr ng-repeat="invoice in vm.invoices">
+                <td>
+                    {{invoice.clientInfo}}
+                </td>
+                <td>{{invoice.ammount}}</td>
+            </tr>
+        </table>
+    </md-card-content>
+</md-card>

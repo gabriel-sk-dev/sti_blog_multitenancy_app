@@ -1,0 +1,65 @@
+[
+  {
+    "code": "001",
+    "name": "Banco do Brasil",
+    "short_name": "BB",
+    "jurisdiction": "Federal",
+    "website": "www.bb.com.br"
+  },
+  {
+    "code": "104",
+    "name": "Caixa Econômica Federal",
+    "short_name": "CEF",
+    "jurisdiction": "Federal",
+    "website": "www.caixa.gov.br"
+  },
+  {
+    "code": "041",
+    "name": "Banrisul - Banco do Estado do Rio Grande do Sul",
+    "short_name": "Banrisul",
+    "jurisdiction": "Estadual",
+    "website": "www.banrisul.com.br"
+  },
+  {
+    "code": "745",
+    "name": "Banco Citibank",
+    "short_name": "Citibank",
+    "website": "www.citibank.com.br"
+  },
+  {
+    "code": "389",
+    "name": "Banco Mercantil do Brasil",
+    "short_name": "BMB",
+    "website": "www.mercantildobrasil.com.br"
+  },
+  {
+    "code": "033",
+    "name": "Banco Santander",
+    "short_name": "Santander",
+    "website": "www.santander.com.br"
+  },
+  {
+    "code": "237",
+    "name": "Bradesco",
+    "short_name": "Bradesco",
+    "website": "www.bradesco.com.br"
+  },
+  {
+    "code": "341",
+    "name": "Itaú Unibanco",
+    "short_name": "Itaú",
+    "website": "www.itau.com.br"
+  },
+  {
+    "code": "756",
+    "name": "Cooperado Sicoob UniMais",
+    "short_name": "SICOOB",
+    "website": "www.sicoob.com.br"
+  },
+  {
+    "code": "748",
+    "name": "Banco Cooperativo Sicredi S.A.",
+    "short_name": "SICRED",
+    "website": "www.sicredi.com.br"
+  }
+]

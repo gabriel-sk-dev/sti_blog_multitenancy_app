@@ -1,0 +1,30 @@
+﻿<md-input-container class="md-icon-float md-block" style="text-align: left" >
+
+    <md-tooltip ng-if="!vm.readOnly && vm.tooltip"
+                md-direction="{{vm.tooltipDirection}}"
+                md-delay="vm.tooltipDelay">
+        {{vm.tooltip}}
+    </md-tooltip>
+
+    <label>{{vm.label}}</label>
+
+    <textarea ng-model="vm.model"
+              class="form-control"
+              name="{{vm.name}}"
+              ng-required="{{vm.required}}"
+              ng-disabled="vm.readOnly"
+              ng-maxlength="{{vm.maxlength}}"
+              rows="{{vm.rows}}"
+              md-maxlength="{{vm.maxlength}}"
+              md-select-on-focus
+              ng-style="(vm.rows > 1) && {'border':'1px solid #ccc'}"></textarea>
+
+    <div ng-messages="vm.form[vm.name].$error" ng-show="vm.form[vm.name].$touched" role="alert">
+        <div ng-message="required">Campo obrigatório.</div>
+        <div ng-message="maxlength">Digite no máximo {{vm.maxlength}} caracteres.</div>
+        <div class="field-error" style="display: none;"></div>
+    </div>
+
+</md-input-container>
+
+

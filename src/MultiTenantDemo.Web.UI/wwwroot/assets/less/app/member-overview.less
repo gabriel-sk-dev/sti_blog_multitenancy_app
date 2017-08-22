@@ -1,0 +1,314 @@
+﻿attendance-header {
+    width: 100%;
+
+    .Header {
+        background-color: #3f51b5;
+        padding: 5px 10px 1px 20px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+                
+        .protocolNumber, .subTitle{
+            font-size: 14px;   
+        }
+        
+        @media (min-width: 960px) {    
+            .protocolNumber, .subTitle{
+                font-size: 16px;   
+            }
+        }
+
+        .selected-total {
+            margin-right: 10px;
+            vertical-align: middle;
+            position: relative;
+        }
+
+        a {
+            color: #FFEB3B;
+        }
+
+        .title {
+            margin-top: 7px;
+            margin-bottom: 12px;
+
+            a {
+                color: white;
+                text-decoration: none;
+            }
+
+            a:hover {
+                color: #FFEB3B;
+            }
+        }
+
+        .subTitle {
+            margin-top: 12px;
+        }
+    }
+}
+
+#MemberOverview {
+    .Attendance {
+        min-height: 400px;
+        display: flex;
+
+        md-card {
+            md-card-header {
+                md-toolbar .md-title {
+                    margin-top: 3px;
+                }
+            }
+        }
+        @media (min-width: 960px) {    
+            md-card {
+                md-card-header {
+                    md-toolbar .md-title {
+                        margin-top: 2px;
+                    }
+                }
+            }    
+        }
+
+
+        .Menu {
+            padding-left: 10px;
+            float: left;
+            padding-top: 20px;
+            width: 25%;
+            text-align: center;
+
+            .Photo {
+                background-color: #d2d7db;
+                color: #555;
+
+                img {
+                    border-bottom: 5px solid #fff;
+                }
+            }
+
+            .Photo :hover {
+                color: #000;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+
+            .PhotoLink {
+                padding: 2px 0 5px;
+                cursor: pointer;
+            }
+
+            .phone, .email, .public-id {
+                font-size: 12px;
+                padding: 10px 0;
+            }
+            
+            @media (min-width: 960px) {    
+                .phone, .email, .public-id {
+                    font-size: 13px;
+                    padding: 10px 0;
+                }
+            }
+
+            .name{
+                font-size: 14px;
+                font-weight: bold;
+                padding: 10px 0;
+            }
+            
+            @media (min-width: 960px) {    
+                .name{
+                    font-size: 18px;
+                    font-weight: bold;
+                    padding: 10px 0;
+                }
+            }
+
+
+            .Infos {
+                text-align: left;
+
+                .change-info {
+                    color: rgb(85, 26, 139);
+                    cursor: pointer !important;
+                }
+
+                i.zmdi {
+                    width: 20px;
+                    font-size: 16px;
+                }
+
+                > p {
+                    font-size: 14px;
+                }
+
+                .UpdateRegister {
+                    button, md-button {
+                        width: 90%;
+                    }
+                }
+            }
+        }
+
+        .Content {
+            width: 100%;
+            padding: 10px 20px;
+
+            ul {
+                list-style-type: none;
+
+                md-card {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+.btn-add-tabs {
+    position: absolute;
+    right: 20px;
+    top: 16px;
+    z-index: 1 !important;
+}
+
+.videoContent {
+    width: 318px;
+    height: 418px;
+    overflow: hidden;
+
+    .boxRight {
+        height: 480px;
+        width: 341px;
+        background-color: white;
+        position: absolute;
+        margin-left: 300px;
+        background-color: #fafafa;
+    }
+
+    .boxBottom {
+        height: 80px;
+        width: 341px;
+        background-color: white;
+        position: absolute;
+        margin-top: 400px;
+        background-color: #fafafa;
+    }
+}
+
+.paddingBotTakePicture {
+    padding-left: 107px;
+}
+
+.paddingBotSave {
+    padding-left: 160px;
+}
+
+.PictureBox {
+    width: 420px;
+}
+
+.agreement-status {
+    color: white;
+    float: right;
+    border-radius: 4px;
+    padding: 9px 10px;
+    font-size: 13px;
+    &.active{
+        .bgm-green;
+    }
+    &.suspended{
+        .bgm-red;
+    }
+    &.canceled{
+        .bgm-black;        
+    }
+}
+
+md-card-header{
+    &.agreement-status {
+        border-bottom: 4px solid;
+        border-radius: 0;
+
+        &.active{
+            border-color: #4caf50;
+        }
+        &.suspended{
+            border-color: black;
+        }
+        &.canceled{
+            border-color: #f44336;
+        }
+    }
+}
+
+.membership-wizard-content{
+    width: 100%;
+
+    @media (min-width: 992px) {
+        width: 67%;
+    }
+
+}
+
+.Attendance{
+    .md-title{
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 960px) {    
+    .Attendance{
+        .md-title{
+            font-size: 16px;
+        }
+    }
+}
+
+.membership-wizard-progress {
+    display: none;
+
+    @media (min-width: 992px) {
+        width: 30%;
+        display: block;
+    }
+}
+
+.card-agremment, .card-financial{
+    .md-title, .sub-title{
+        font-size: 13px;
+        font-weight: bold;
+    }
+}
+
+.card-agremment{    
+    .m-t-20;
+}
+
+.agreement-second {
+    .p-l-0;
+}
+
+.card-financial {
+    margin-top: 18px;
+}
+
+@media (min-width: 960px) {
+    
+    .agreement-second{
+        .p-l-20;
+    }
+
+    .card-agremment, .card-financial {
+        .md-title, .sub-title {
+            font-size: 16px;
+            font-weight: normal;
+        }
+    }    
+
+    .agreement-status {
+        padding: 7px 15px;
+        font-size: 16px;
+    }
+}
